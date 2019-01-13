@@ -161,3 +161,12 @@ php -S localhost:8080
 
 Go to URL `http://localhost:8080`
 Enter the administrator username and password.
+
+#################################
+# Server GDaemon configuration.
+After installing all the web panel and installing the gameap-daemon using eather the repository method or using the manual compilation method the daemon needs to be configured to work propertly with the game panel web service. If you do not touch it it doesn't work. it runs but all the logs are full off errors such like:
+`Parse config error: daemon.cfg: cannot open file
+Config parse error
+`
+There is a little to few explanation what certs are for what and why they are needed in it anyways. it runs localy and i dont think there is a need to secure connection while using the loop (lo) or in onther words localhost enviroment. it could be used trought the process socket to comunicate. it is needed when you add remote server as an additional but in most cases there will be used local daemon to do the comunication with the steamcmd and working as a secure enviroment for the panel to work in. 
+Anyways, first off all i would be glad to know what certs has to match with the web panel and how to configure propertly the web panel GDaemon part of the server to be able to work propertly. Atleast is there any debuging mode in gameap-daemon to debug what exactly configuration sanity did not pass the test and what exactly file is non-accesable. Right now it is just trowing errors about the file althought i did checked what permissions is on the daemon.cfg. it is the same a i run the service with. does it requires to trow the config path as the parram to the startup of the service?
